@@ -13,16 +13,35 @@
     <!-- Form Registro Start-->
     <div
     id="myForm"
-    class="visual position-absolute top-50 start-50 translate-middle  rounded col-sm-12 col-xl-5"
+    class="visual position-absolute top-50 start-50 translate-middle rounded col-sm-12 col-xl-5"
   >
     <div class="rounded h-100 p-4">
-      <h6 class="text-black-50">Registrar Tipo de ingresos</h6>
+      <h6 class="mb-4">Registrar miembros</h6>
       <form id="form">
         <div class="mb-3">
-          <label for="nombre" class="form-label">Nombre:</label>
-          <input type="text" class="form-control" id="nombre" required />
+          <label for="nombres" class="form-label">Nombres</label>
+          <input type="text" class="form-control" id="nombres" required />
         </div>
-      
+        <div class="mb-3">
+          <label for="apellidos" class="form-label">Apellidos</label>
+          <input type="text" class="form-control" id="apellidos" required />
+        </div>
+        <div class="mb-3">
+          <label for="ci" class="form-label">Carnet de Identidad</label>
+          <input type="text" class="form-control" id="ci" required />
+        </div>
+        <div class="mb-3">
+          <label for="dirrecion" class="form-label">Dirrecion</label>
+          <input type="text" class="form-control" id="dirrecion" required />
+        </div>
+        <div class="mb-3">
+          <label for="telefono" class="form-label">Telefono</label>
+          <input type="number" class="form-control" id="telefono" required />
+        </div>
+        <div class="mb-3">
+          <label for="fecha_naci" class="form-label">Fecha de Naciomiento</label>
+          <input type="date" class="form-control" id="fecha_naci" required />
+        </div>
         <div class="btnn d-flex justify-content-center">
           <button type="submit" class="btn">Registrar</button>
         </div>
@@ -44,7 +63,7 @@
               <div
                 class="d-flex align-items-center justify-content-between mb-4"
               >
-                <h6 class="text-black-50">Registro Tipos de Ingresos</h6>
+                <h6 class="text-black-50">Registro miembros</h6>
                 <button
                   type="button"
                   class="btn btn2-primary m-2"
@@ -58,13 +77,18 @@
                   <thead>
                     <tr class="text-black-50">
                       <th scope="col">#</th>
-                      <th scope="col">Nombre</th>
-                      <th scope="col">Fecha de <br> Registro</th>
+                      <th scope="col">Nombres</th>
+                      <th scope="col">Apellidos</th>
+                      <th scope="col">DNI</th>
+                      <th scope="col">Dirrecion</th>
+                      <th scope="col">Telefono</th>
+                      <th scope="col">Fecha de Naciomiento</th>
+                      <th scope="col">Fecha de Registro</th>
                       <th scope="col">Habilitado</th>
                       <th scope="col">Acciones</th>
                     </tr>
                   </thead>
-                  <tbody id="tipo_ingreso">
+                  <tbody id="miembro">
                     <!--mostrar tabla usuario-->
                   </tbody>
                 </table>
@@ -78,7 +102,7 @@
       </div>
       <!-- Content End -->
       <!-- Back to Top -->
-      <a href="#" class="btn btn-lg btn-lg-square back-to-top"
+      <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
         ><i class="bi bi-arrow-up"></i
       ></a>
       <!-- Back to Top -->
@@ -118,6 +142,6 @@
         });
       });
     </script>
-    <script src="/js/tipo_ingresos.js"></script>
+    <script src="/js/miembro.js"></script>
   </body>
 </html>

@@ -1,6 +1,6 @@
 <!-- Spinner Start -->
 <div id="spinner"
-  class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+  class="show  position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
   <div class="spinner-border text-primary" style="width: 3rem; height: 3rem" role="status">
     <span class="sr-only">Loading...</span>
   </div>
@@ -25,14 +25,14 @@
       </div>
     </div>
     <div class="navbar-nav w-100">
-      <a href="/Secretaria" class="nav-item nav-link <%= currentRoute === '/Secretaria' ? 'active' : '' %>""><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+      <a href="/Secretaria" class="nav-item nav-link <%= currentRoute === '/Secretaria' ? 'active' : '' %>"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
       <div class="nav-item dropdown">
-        <a href="#" class="nav-link dropdown-toggle <%= ['/Secretaria/tipo_ingresos', '/Secretaria/nueva-venta', '/Secretaria/ventas'].includes(currentRoute) ? 'active' : '' %>" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Registro
-          Ventas</a>
+        <a href="#" class="nav-link dropdown-toggle <%= ['/Secretaria/miembro', '/Secretaria/egreso', '/Secretaria/ingreso'].includes(currentRoute) ? 'active' : '' %>" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Registros
+          </a>
         <div class="dropdown-menu bg-transparent border-0">
-          <a href="/Secretaria/tipo_ingresos  " class="dropdown-item <%= currentRoute === '/Secretaria/tipo_ingreso' ? 'active' : '' %>">Tipo de Ingresos</a>
-          <a href="/Secretaria/nueva-venta" class="dropdown-item <%= currentRoute === '/Secretaria/nueva-venta' ? 'active' : '' %>">Nueva venta</a>
-          <a href="/Secretaria/ingresos" class="dropdown-item <%= currentRoute === '/Secretaria/ingreso' ? 'active' : '' %>">Ventas</a>
+          <a href="/Secretaria/miembros  " class="dropdown-item <%= currentRoute === '/Secretaria/miembro' ? 'active' : '' %>">Miembro</a>
+          <a href="/Secretaria/egresos" class="dropdown-item <%= currentRoute === '/Secretaria/egreso' ? 'active' : '' %>">Egresos</a>
+          <a href="/Secretaria/ingresos" class="dropdown-item <%= currentRoute === '/Secretaria/ingreso' ? 'active' : '' %>">Ingresos</a>
         </div>
       </div>
     </div>

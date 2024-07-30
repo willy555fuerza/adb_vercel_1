@@ -17,14 +17,14 @@
   <!-- Form Registro Start-->
   <div id="myForm" class="visual position-absolute top-50 start-50 translate-middle rounded col-sm-12 col-xl-6">
     <div class="rounded h-100 p-4">
-      <h6 class="text-black-50">Registrar Egresos</h6>
+      <h6 class="mb-4">Registrar Ingresos</h6>
   
       <form id="form">
         <!--<div class="col-xl-5">-->
         
         <div class="mb-3">
-          <label for="fecha_egreso" class="form-label">Fecha de Egresos</label>
-          <input type="date" class="form-control form-control-sm" id="fecha_egreso" value="2024-04-20" required />
+          <label for="fecha_ingreso" class="form-label">Fecha de Ingresos</label>
+          <input type="date" class="form-control form-control-sm" id="fecha_ingreso" value="2024-04-20" required />
         </div>
         <!--  <div class="mb-3">
           <label for="usuario" class="form-label">Usuarios</label>
@@ -32,15 +32,15 @@
           </select>
         </div> -->
         <div class="mb-3">
-          <label for="tipo_egreso" class="form-label">Tipos de Egresos</label>
-          <select class="form-select" id="tipo_egreso" required>
+          <label for="tipo_ingreso" class="form-label">Tipos de Ingresos</label>
+          <select class="form-select" id="tipo_ingreso" required>
           </select>
         </div>
-   <!--      <div class="mb-3">
+        <div class="mb-3">
           <label for="miembro" class="form-label">Miembros</label>
           <select class="form-select" id="miembro" required>
           </select>
-        </div> -->
+        </div>
 
         <div class="mb-3">
           <label for="monto" class="form-label">Monto</label>
@@ -69,7 +69,40 @@
             <div class="row g-4">
               <div class="text-center rounded p-4">
                 <div class="d-flex align-items-center justify-content-between mb-4">
-                  <h6  class="text-black-50">Registro Egresos</h6>
+                <!--   <div class="col-md-1 mb-1" >
+                    <label for="inputGestion" class="form-label">Gestion:</label>
+                    <select class="form-select" id="fecha_ingreso">
+                      <option value="2011">2011</option>
+                      <option value="1998">2011</option>
+                      <option value="1999">2011</option>
+                      <option value="2000">2011</option>
+                      <option value="2001">2011</option>
+                      <option value="2002">2011</option>
+                      <option value="2003">2011</option>
+                      <option value="2004">2011</option>
+                      <option value="2005">2011</option>
+                      <option value="2006">2011</option>
+                      <option value="2007">2011</option>
+                      <option value="2008">2008</option>
+                      <option value="2009">2009</option>
+                      <option value="2010">2010</option>
+                      <option value="2011">2011</option>
+                      <option value="2012">2012</option>
+                      <option value="2013">2013</option>
+                      <option value="2014">2014</option>
+                      <option value="2015">2015</option>
+                      <option value="2016">2016</option>
+                      <option value="2017">2017</option>
+                      <option value="2018">2018</option>
+                      <option value="2019">2019</option>
+                      <option value="2020">2020</option>
+                      <option value="2021">2021</option>
+                      <option value="2022">2022</option>
+                      <option value="2023">2023</option>
+                      <option value="2024">2024</option>
+                    </select>
+                  </div> -->
+                  <h6  class="text-black-50">Registro Ingresos</h6>
                   
                   <div class="d-flex"> 
                     <button type="button" class="btn btn2-primary m-2 col-5" id="imprimirtabla">
@@ -88,16 +121,17 @@
                     <thead>
                       <tr class="text-black-50">
                         <th scope="col">#</th>
-                        <th scope="col">Fecha de <br> Egresos</th>
+                        <th scope="col">Fecha de <br> Ingresos</th>
                         <th scope="col">Usuarios</th>
                         <th scope="col">Tipos de Ingresos</th>
+                        <th scope="col">Miembros</th>
                         <th scope="col">Monto</th>
                         <th scope="col">Fecha de <br> Registro</th>
                         <th scope="col">Habilitado</th>
                         <th scope="col">Acciones</th>
                       </tr>
                     </thead>
-                    <tbody id="egreso">
+                    <tbody id="ingreso">
                       <!--mostrar tabla usuario-->
                     </tbody>
                 </div>
@@ -153,7 +187,7 @@
 
     });
   </script>
-    <script src="/js/egresos.js"></script>
+    <script src="/js/ingresos.js"></script>
 </body>
 
 </html>
