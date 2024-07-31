@@ -4,7 +4,7 @@
 const {connectToPostgres,disconnectFromPostgres,} = require("../../infrastructure/database/db");
   
 class DashboardModel {
-    static async getUsuariosCount(req, res) {
+    static async getUsuarioCount(req, res) {
         try {
             const pool = await connectToPostgres();
             const result = await pool.query('SELECT COUNT(*) AS count FROM usuario');
@@ -16,39 +16,39 @@ class DashboardModel {
         }
     }
 
-    static async getClientesCount(req, res) {
+    static async getingresoCount(req, res) {
         try {
             const pool = await connectToPostgres();
-            const result = await pool.query('SELECT COUNT(*) AS count FROM cliente');
+            const result = await pool.query('SELECT COUNT(*) AS count FROM ingreso');
             await disconnectFromPostgres(pool); // Disconnect from the database
             res.status(200).json(result.rows[0]);
         } catch (error) {
-            console.error('Error al obtener el conteo de clientes:', error);
-            res.status(500).json({ error: 'Error al obtener el conteo de clientes' });
+            console.error('Error al obtener el conteo de ingreso:', error);
+            res.status(500).json({ error: 'Error al obtener el conteo de ingresos' });
         }
     }
 
-    static async getProductosCount(req, res) {
+    static async getegresoCount(req, res) {
         try {
             const pool = await connectToPostgres();
-            const result = await pool.query('SELECT COUNT(*) AS count FROM producto');
+            const result = await pool.query('SELECT COUNT(*) AS count FROM egreso');
             await disconnectFromPostgres(pool); // Disconnect from the database
             res.status(200).json(result.rows[0]);
         } catch (error) {
-            console.error('Error al obtener el conteo de productos:', error);
-            res.status(500).json({ error: 'Error al obtener el conteo de productos' });
+            console.error('Error al obtener el conteo de egreso:', error);
+            res.status(500).json({ error: 'Error al obtener el conteo de egresos' });
         }
     }
 
-    static async getVentasCount(req, res) {
+    static async getlistaCount(req, res) {
         try {
             const pool = await connectToPostgres();
-            const result = await pool.query('SELECT COUNT(*) AS count FROM venta');
+            const result = await pool.query('SELECT COUNT(*) AS count FROM lista');
             await disconnectFromPostgres(pool); // Disconnect from the database
             res.status(200).json(result.rows[0]);
         } catch (error) {
-            console.error('Error al obtener el conteo de ventas:', error);
-            res.status(500).json({ error: 'Error al obtener el conteo de ventas' });
+            console.error('Error al obtener el conteo de lista:', error);
+            res.status(500).json({ error: 'Error al obtener el conteo de lista' });
         }
     }
 }

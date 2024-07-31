@@ -79,41 +79,45 @@ const obtenerToken = async () => {
       const token = obtenerTokenre();
         
         // Hacer solicitudes para obtener los datos
-        const [usuariosRes, tipo_ingresosRes] = await Promise.all([
-            fetch(`${baseURL}/usuarios/count`, {
+        const [usuarioRes, ingresoRes, egresoRes, listaRes] = await Promise.all([
+            fetch(`${baseURL}/usuario/count`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
             }),
-            fetch(`${baseURL}/tipo_ingresos/count`, {
+            fetch(`${baseURL}/ingreso/count`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
             }),
-       /*      fetch(`${baseURL}/productos/count`, {
+    
+             fetch(`${baseURL}/egreso/count`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
-            }), */
-           /*  fetch(`${baseURL}/ventas/count`, {
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
-            }) */
+            }) ,
+
+            fetch(`${baseURL}/lista/count`, {
+              headers: {
+                  Authorization: `Bearer ${token}`
+              }
+          }) 
         ]);
 
         // Verificar si todas las respuestas son exitosas
-        if (usuariosRes.ok && tipo_ingresosRes.ok ) {
-            const usuariosData = await usuariosRes.json();
-            const tipo_ingresosData = await tipo_ingresosRes.json();
-           /*  const productosData = await productosRes.json();
-            const ventasData = await ventasRes.json(); */
+        if (usuarioRes.ok && ingresoRes.ok && egresoRes.ok && listaRes.ok  ) {
+            const usuarioData = await usuarioRes.json();
+            const ingresoData = await ingresoRes.json();
+            const egresoData = await egresoRes.json();
+            const listaData = await listaRes.json();
+
 
             // Actualizar los elementos HTML con los datos recibidos
-            document.getElementById('usuario').textContent = usuariosData.count;
-            document.getElementById('tipo_ingreso').textContent = tipo_ingresosData.count;
-         /*    document.getElementById('productos').textContent = productosData.count;
-            document.getElementById('ventas').textContent = ventasData.count; */
+            document.getElementById('usuario').textContent = usuarioData.count;
+            document.getElementById('ingreso').textContent = ingresoData.count;
+            document.getElementById('egreso').textContent = egresoData.count;
+            document.getElementById('lista').textContent = listaData.count;
+        
         } else {
             throw new Error('Error al obtener los datos');
         }
