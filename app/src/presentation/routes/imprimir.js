@@ -68,7 +68,7 @@ router.post('/downloadpdff', async (req, res) => {
     const data = result.data[0];
 
     // Crear un nuevo documento PDF
-    const doc = new PDFDocument({ margin: 50 });
+    const doc = new PDFDocument({ margin: 30 });
     let filename = 'Recibo.pdf';
     filename = encodeURIComponent(filename);
 
@@ -93,11 +93,11 @@ router.post('/downloadpdff', async (req, res) => {
       console.error('Logo file not found:', logoPath);
     }
 
-    doc.fontSize(20).text('THE BEST COMPANY ADB', { align: 'center' });
+    doc.fontSize(20).text('IGLESIA ASAMBLEA DE DIOS BOLIVIANA', { align: 'center' });
 
     // Agregar datos del ingreso al PDF
     doc.moveDown(2);
-    doc.fontSize(12).text('Detalles del Egreso:', { align: 'center', underline: true });
+    doc.fontSize(12).text('Detalles del Egreso por usuario:', { align: 'center', underline: true });
 
     // Añadir una tabla
     const tableTop = doc.y + 50; // Centrar verticalmente desde la posición actual
@@ -170,7 +170,7 @@ router.post('/downloadpdf', async (req, res) => {
 
     
     // Crear un nuevo documento PDF
-    const doc = new PDFDocument({ margin: 50 });
+    const doc = new PDFDocument({ margin: 30 });
     let filename = 'Recibo.pdf';
     filename = encodeURIComponent(filename);
 
@@ -195,12 +195,12 @@ router.post('/downloadpdf', async (req, res) => {
       console.error('Logo file not found:', logoPath);
     }
 
-    doc.fontSize(20).text('THE BEST COMPANY ADB', { align: 'center' });
+    doc.fontSize(20).text('IGLESIA ASAMBLEA DE DIOS BOLIVIANA', { align: 'center' });
 
     // Agregar datos del ingreso al PDF
    /*  doc.moveDown(); */
    doc.moveDown(2);
-   doc.fontSize(12).text('Detalles del Ingreso:', { align: 'center', underline: true });
+   doc.fontSize(12).text('Detalles del Ingreso por usuario:', { align: 'center', underline: true });
    
    // Añadir una tabla
    const tableTop = doc.y + 50; // Centrar verticalmente desde la posición actual
@@ -269,7 +269,7 @@ router.post('/imprimirtablas', async (req, res) => {
 
   try {
     // Crear un nuevo documento PDF
-    const doc = new PDFDocument({ margin: 50 });
+    const doc = new PDFDocument({ margin: 30 });
     let filename = 'Recibo.pdf';
     filename = encodeURIComponent(filename);
 
@@ -294,7 +294,7 @@ router.post('/imprimirtablas', async (req, res) => {
       console.error('Logo file not found:', logoPath);
     }
 
-    doc.fontSize(20).text('THE BEST COMPANY ADB', { align: 'center' });
+    doc.fontSize(20).text('IGLESIA ASAMBLEA DE DIOS BOLIVIANA', { align: 'center' });
 
     // Agregar datos del ingreso al PDF
     doc.moveDown(2);
@@ -356,7 +356,7 @@ router.post('/imprimirtabla', async (req, res) => {
 
   try {
     // Crear un nuevo documento PDF
-    const doc = new PDFDocument({ margin: 50 });
+    const doc = new PDFDocument({ margin: 30 });
     let filename = 'Recibo.pdf';
     filename = encodeURIComponent(filename);
 
@@ -381,7 +381,7 @@ router.post('/imprimirtabla', async (req, res) => {
       console.error('Logo file not found:', logoPath);
     }
 
-    doc.fontSize(20).text('THE BEST COMPANY ADB', { align: 'center' });
+    doc.fontSize(20).text('IGLESIA ASAMBLEA DE DIOS BOLIVIANA', { align: 'center' });
 
     // Agregar datos del ingreso al PDF
     doc.moveDown(2);
@@ -419,6 +419,7 @@ router.post('/imprimirtabla', async (req, res) => {
         doc.fillColor('black')
           .text(cell, 50 + columnWidths.slice(0, i).reduce((a, b) => a + b, 0) + 5, rowTop + 3, { width: columnWidths[i] - 10, align: 'center' });
       });
+      
       // Mover la posición y hacia abajo para la siguiente fila
       rowTop += rowHeight;
     });

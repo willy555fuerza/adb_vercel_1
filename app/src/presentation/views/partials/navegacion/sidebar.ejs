@@ -1,6 +1,6 @@
 <!-- Spinner Start -->
 <div id="spinner"
-  class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+  class="show  position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
   <div class="spinner-border text-primary" style="width: 3rem; height: 3rem" role="status">
     <span class="sr-only">Loading...</span>
   </div>
@@ -8,8 +8,8 @@
 <!-- Spinner End -->
 
 <!-- Sidebar Start -->
-<div class="sidebar pe-2 pb-3">
-  <nav class="navbar bg-secondary navbar-dark">
+<div class="sidebar pe-2 pb-3 bg-secondary">
+  <nav class="navbar bg-secondary ">
     <a href="/" style="display: flex; justify-content: center; width: 100%; height: 90px; ">
       <img style="width: 60%" class="img-responsive img-fluid" alt="Responsive image" src="/will.png"
         alt="" />
@@ -24,7 +24,7 @@
         <span id="perfi">adm</span>
       </div>
     </div>
-    <div class="navbar-nav w-100">
+    <div class="navbar-nav w-100 bg-secondary" >
       <a href="/" class="nav-item nav-link <%= currentRoute === '/' ? 'active' : '' %>""><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
       <a href="/usuarios" class="nav-item nav-link <%= currentRoute === '/usuarios' ? 'active' : '' %>"><i class="fi fi-sr-users-alt me-2"></i>Usuarios</a>
       <a href="/ministerios" class="nav-item nav-link <%= currentRoute === '/ministerio' ? 'active' : '' %>"><i class="fi fi-sr-scale me-2"></i>Ministerio</a>
