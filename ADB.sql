@@ -16,7 +16,7 @@ CREATE TABLE usuario (
 );
 
 INSERT INTO usuario (nombres, apellidos, perfil, usuario, contraseña,   fecha_registro)
-VALUES ('LUNA', 'ROSA', 'Administrador', 'willy', '$$2a$12$BG0VypuPEhOPV0Ddc5WSpegACk7FSoWYAiQHm0xE6qjmyAy6I1.5C', CURRENT_TIMESTAMP);
+VALUES ('LUNA', 'ROSA', 'ADMINISTRADOR', 'willy', '$2a$12$5OHqjaveOSbuRl0QAQsf3e11vcgqGx/GFvAuU2OkmlwvPXqLLNuRq', CURRENT_TIMESTAMP);
 select * from usuario;
 
 
