@@ -334,6 +334,20 @@ body * {
     transition: 0.5s;
 }
 
+/* .pe-none{
+    background-color: --bg-Primary;
+    height: 3vh;
+    justify-content: center;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.the{
+    justify-content: center;
+    text-align: center;
+    padding-top: 25px;
+} */
+
 @media (min-width: 992px) {
     .sidebar {
         margin-left: 0;
