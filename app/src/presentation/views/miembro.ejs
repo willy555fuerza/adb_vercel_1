@@ -13,7 +13,7 @@
     <!-- Form Registro Start-->
     <div
     id="myForm"
-    class="visual position-absolute top-50 start-50 translate-middle rounded col-sm-12 col-xl-5"
+    class="visual position-absolute top-50 start-50 translate-middle rounded col-sm-12 col-xl-6"
   >
     <div class="rounded h-100 p-4">
       <h6 class="text-black-50">Registrar miembros</h6>
@@ -49,39 +49,40 @@
     </div>
   </div>
     <!-- Form Registro End-->
+
     <!-- Content Padre Start -->
     <div class="container-fluid position-relative d-flex p-0 padre">
+      <!-- Sidebar Navigation -->
       <%- include('partials/navegacion/sidebar') %>
-      <!-- Content Start -->
+    
+      <!-- Content Wrapper -->
       <div class="content position-relative bg-white">
-        <%- include('partials/navegacion/navbar') %> 
-        
-        <!-- Chart Start -->
+        <!-- Navbar -->
+        <%- include('partials/navegacion/navbar') %>
+    
+        <!-- Main Content Start -->
         <div class="container-fluid pt-4 px-4" id="chart">
           <div class="row g-4">
+            <!-- Registration List Section -->
             <div class="text-center rounded p-4">
-              <div
-                class="d-flex align-items-center justify-content-between mb-4"
-              >
-                <h6 class="text-black-50">Registro miembros</h6>
-                <button
-                  type="button"
-                  class="btn btn2-primary m-2"
-                  id="btnAgregarUsuario"
-                >
+              <div class="d-flex align-items-center justify-content-between mb-4">
+                <h6 class="text-black-50">Registro Miembros</h6>
+                <button type="button" class="btn btn2-primary m-2" id="btnAgregarUsuario">
                   Registrar
                 </button>
               </div>
+    
+              <!-- Table Section -->
               <div class="table-responsive">
-                <table id="myTable" class="display table align-middle table-bordered table-hover mb-0">
+                <table id="myTable" class="table align-middle table-bordered table-hover mb-0">
                   <thead>
                     <tr class="text-black-50">
                       <th scope="col">#</th>
                       <th scope="col">Nombres</th>
                       <th scope="col">Apellidos</th>
                       <th scope="col">DNI</th>
-                      <th scope="col">Dirrecion</th>
-                      <th scope="col">Telefono</th>
+                      <th scope="col">Dirección</th>
+                      <th scope="col">Teléfono</th>
                       <th scope="col">Fecha de Nacimiento</th>
                       <th scope="col">Fecha de Registro</th>
                       <th scope="col">Habilitado</th>
@@ -89,22 +90,19 @@
                     </tr>
                   </thead>
                   <tbody id="miembro">
-                    <!--mostrar tabla usuario-->
+                    <!-- Content will be injected here dynamically -->
                   </tbody>
                 </table>
               </div>
             </div>
           </div>
         </div>
-        <!-- Chart End -->
-        
-        <%- include('partials/footer/footer') %>
-      </div>
+        <!-- Main Content End -->
       <!-- Content End -->
       <!-- Back to Top -->
-      <a href="#" class="btn btn-lg btn-primary btn-lg-square"
+      <!-- <a href="#" class="btn btn-lg btn-primary btn-lg-square"
         ><i class="bi bi-arrow-up"></i
-      ></a>
+      ></a> -->
       <!-- Back to Top -->
     </div>
     <!-- Content Padre End -->

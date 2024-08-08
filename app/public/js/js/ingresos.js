@@ -451,7 +451,7 @@ const getAllmiembroPromise = getAllmiembros();
                         <li><a onclick="changeState(${id_ingreso}, ${estado})" class="dropdown-item" href="#" id="change-state-${id_ingreso}">${estado ? "Inhabilitar" : "Habilitar"}</a></li>
                     </ul>
                     
-                    <div class="btn-group">
+                    <div class="btnn-group">
                         <button type="button" onclick="descargarPDF(${id_ingreso})" class="btn btn-outline-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                             Imprimir
                         </button>

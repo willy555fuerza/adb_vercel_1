@@ -397,7 +397,7 @@ const getAllTipoegresosPromise = getAllTipoegreso();
                         <li><a onclick="changeState(${id_egreso}, ${estado})" class="dropdown-item" href="#" id="change-state-${id_egreso}">${estado ? "Inhabilitar" : "Habilitar"}</a></li>
                     </ul>
                     
-                    <div class="btn-group">
+                    <div class="btnn-group">
                         <button type="button" onclick="descargarPDFF(${id_egreso})" class="btn btn-outline-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                             Imprimir
                         </button>
