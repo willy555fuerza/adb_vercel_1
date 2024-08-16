@@ -45,6 +45,7 @@
 }
 
 
+
 .btnn-group{
     padding-top: 5px;
 }
@@ -57,10 +58,12 @@
 
 .btn {
     transition: .5s;
-    background-color: rgb(10, 3, 37);
+    background-color: rgb(8, 4, 19);
     color: white;
     border: none;
 }
+
+
 
 .container-fluid{
     display:block;
@@ -124,7 +127,7 @@
 /* Mantén el fondo del campo de entrada y el color del texto cuando está en estado de solo lectura */
 input[readonly] {
     background-color: #f8f9fa; /* Mantén el color de fondo deseado */
-    color: #212529; /* Mantén el color del texto deseado */
+    color: #defcfe; /* Mantén el color del texto deseado */
     opacity: 1; /* Asegúrate de que el campo no se vuelva transparente */
 }
 
@@ -140,6 +143,7 @@ input[readonly] {
     margin: 0;
     position: relative;
     vertical-align: middle;
+   
     /* width: 100%; */
 }
 
@@ -151,6 +155,7 @@ input[readonly] {
     user-select: none;
     -webkit-user-select: none;
     width: 100%;
+  
 }
 
 .select2-container .select2-selection--single .select2-selection__rendered {
@@ -190,16 +195,19 @@ input[readonly] {
 
 /* Estilos para el cuadro de selección */
 .select2-container .select2-selection {
-    background-color: black; /* Cambia el color de fondo */
-    border-color: #000000; /* Cambia el color del borde */
-    color: #333; /* Cambia el color del texto */
+    background-color: rgb(203, 246, 250); /* Cambia el color de fondo */
+ /*    border-color: #e7fcfd; /* Cambia el color del borde */ 
+    color: #eafdfe; /* Cambia el color del texto */
   }
   
+  .selectElement .option{
+    background-color: none;
+  }
   /* Estilos para las opciones del menú desplegable */
   .select2-container .select2-dropdown {
-    background-color: black; /* Cambia el color de fondo */
-    border-color: #ccc; /* Cambia el color del borde */
-    color: #5a5959; /* Cambia el color del texto */
+    background-color: azure;/* Cambia el color de fondo */
+    /* border-color: azure; /* Cambia el color del borde */ 
+    color: #0a0909; /* Cambia el color del texto */
   }
 body * {
     font-size: 16px; /* Cambia el tamaño del texto y de todos los elementos dentro del body */
@@ -327,7 +335,7 @@ body * {
     width: 250px;
     height: 100vh;
     overflow-y: auto;
-    background: var(--secondary);
+    background: var(--dark);
     transition: 0.5s;
     z-index: 999;
 }
@@ -393,10 +401,11 @@ body * {
     padding: 7px 20px;
     color: var(--light);
     font-weight: 500;
-    border-left: 3px solid var(--secondary);
+    border-left: 3px solid var(--dark);
     border-radius: 0 30px 30px 0;
     outline: none;
 }
+
 
 .sidebar .navbar .navbar-nav .nav-link:hover,
 .sidebar .navbar .navbar-nav .nav-link.active {
@@ -417,7 +426,7 @@ body * {
 
 .sidebar .navbar .navbar-nav .nav-link:hover i,
 .sidebar .navbar .navbar-nav .nav-link.active i {
-    background: var(--secondary);
+    background: var(--dark);
 }
 
 .sidebar .navbar .dropdown-toggle::after {

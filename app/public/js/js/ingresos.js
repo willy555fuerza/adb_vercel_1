@@ -162,7 +162,7 @@ const getAllmiembro = async () => {
 
 // Función para poblar selectores
 const populateSelect = (selectElement, options, valueFieldName, textFieldName) => {
-  selectElement.innerHTML = '<option value="">Seleccione una opción</option>';
+  selectElement.innerHTML = '<option value="" >Seleccione una opción</option>';
   options.forEach(option => {
       const optionElement = document.createElement("option");
       optionElement.value = option[valueFieldName];

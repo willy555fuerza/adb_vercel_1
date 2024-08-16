@@ -97,56 +97,78 @@ router.post('/downloadpdff', async (req, res) => {
 
     // Agregar datos del ingreso al PDF
     doc.moveDown(2);
-    doc.fontSize(12).text('Detalles del Egreso por usuario:', { align: 'center', underline: true });
+doc.fontSize(12).text('Detalles del Egreso por usuario:', { align: 'center', underline: true });
 
-    // Añadir una tabla
-    const tableTop = doc.y + 50; // Centrar verticalmente desde la posición actual
-    const item = data;
+// Añadir una tabla
+const tableTop = doc.y + 50; // Centrar verticalmente desde la posición actual
+const item = data;
 
-    // Dibujar la tabla
-    doc.fontSize(10);
-    const rowHeight = 18; // Reducir aún más la altura de las filas
-    let rowTop = tableTop;
+// Dibujar la tabla
+doc.fontSize(10);
+const rowHeight = 30; // Aumentar la altura de las filas a 30
+let rowTop = tableTop;
 
-    // Ancho de las columnas adaptado
-    const columnWidths = [60, 110, 110, 110, 60]; // Ajustar los anchos de las columnas
+// Ancho de las columnas adaptado
+const columnWidths = [60, 110, 110, 110, 60]; // Ajustar los anchos de las columnas
 
-    // Cabecera de la tabla con colores
-    const headers = ['ID Egreso', 'Usuario', 'Tipo de Egreso', 'Monto', 'Fecha'];
-    headers.forEach((header, i) => {
-      doc.fillColor('blue')
-        .rect(50 + columnWidths.slice(0, i).reduce((a, b) => a + b, 0), rowTop, columnWidths[i], rowHeight)
-        .fill();
-      doc.fillColor('white')
-        .text(header, 50 + columnWidths.slice(0, i).reduce((a, b) => a + b, 0) + 5, rowTop + 5, { width: columnWidths[i] - 10, align: 'center' });
-    });
+// Cabecera de la tabla con colores y bordes
+const headers = ['ID Egreso', 'Usuario', 'Tipo de Egreso', 'Monto', 'Fecha'];
+headers.forEach((header, i) => {
+  const xPosition = 50 + columnWidths.slice(0, i).reduce((a, b) => a + b, 0);
 
-    rowTop += rowHeight;
+  // Dibujar fondo para la celda de la cabecera
+  doc.fillColor('blue')
+    .rect(xPosition, rowTop, columnWidths[i], rowHeight)
+    .fill();
 
-    // Datos de la tabla con colores alternados
-    const values = [
-      item.id_egreso,
-      `${item.usuario_nombres || ''} ${item.usuario_apellidos || ''}`,
-      item.tipo_egreso,
-      item.monto,
-      item.fecha_egreso
-    ];
+  // Dibujar borde gris para la celda de la cabecera
+  doc.strokeColor('gray')
+    .lineWidth(1)
+    .rect(xPosition, rowTop, columnWidths[i], rowHeight)
+    .stroke();
 
-    values.forEach((value, i) => {
-      doc.fillColor(i % 2 === 0 ? 'lightgray' : 'white')
-        .rect(50 + columnWidths.slice(0, i).reduce((a, b) => a + b, 0), rowTop, columnWidths[i], rowHeight)
-        .fill();
-      doc.fillColor('black')
-        .text(value || '', 50 + columnWidths.slice(0, i).reduce((a, b) => a + b, 0) + 5, rowTop + 3, { width: columnWidths[i] - 10, align: 'center' });
-    });
+  // Añadir texto a la celda de la cabecera
+  doc.fillColor('white')
+    .text(header, xPosition + 5, rowTop + 10, { width: columnWidths[i] - 10, align: 'center' }); // Ajustar posición del texto
+});
 
-    rowTop += rowHeight;
+rowTop += rowHeight;
 
-    // Asegurarse de que total_egresos esté definido
-    const totalEgresos = item.total_egresos !== undefined && item.total_egresos !== null ? item.total_egresos : 'No disponible';
+// Datos de la tabla con colores alternados y bordes
+const values = [
+  item.id_egreso,
+  `${item.usuario_nombres || ''} ${item.usuario_apellidos || ''}`,
+  item.tipo_egreso,
+  item.monto,
+  item.fecha_egreso
+];
 
-    doc.fillColor('red')
-      .text(`Total de Egresos: ${totalEgresos}`, 50, rowTop);
+values.forEach((value, i) => {
+  const xPosition = 50 + columnWidths.slice(0, i).reduce((a, b) => a + b, 0);
+
+  // Dibujar fondo para la celda de datos
+  doc.fillColor(i % 2 === 0 ? 'lightgray' : 'white')
+    .rect(xPosition, rowTop, columnWidths[i], rowHeight)
+    .fill();
+
+  // Dibujar borde gris para la celda de datos
+  doc.strokeColor('gray')
+    .lineWidth(1)
+    .rect(xPosition, rowTop, columnWidths[i], rowHeight)
+    .stroke();
+
+  // Añadir texto a la celda de datos
+  doc.fillColor('black')
+    .text(value || '', xPosition + 5, rowTop + 10, { width: columnWidths[i] - 10, align: 'center' }); // Ajustar posición del texto
+});
+
+rowTop += rowHeight;
+
+// Asegurarse de que total_egresos esté definido
+const totalEgresos = item.total_egresos !== undefined && item.total_egresos !== null ? item.total_egresos : 'No disponible';
+
+doc.fillColor('red')
+  .text(`Total de Egresos: ${totalEgresos}`, 50, rowTop);
 
     // Finalizar el documento PDF
     doc.end();
@@ -207,11 +229,11 @@ router.post('/downloadpdf', async (req, res) => {
    
    // Dibujar la tabla
    doc.fontSize(10);
-   const rowHeight = 22; // Aumentar la altura de las filas
+   const rowHeight = 40; // Aumentar la altura de las filas a 40
    let rowTop = doc.y + 50; // Posición inicial vertical de la tabla
    
    // Ancho de las columnas adaptado
-   const columnWidths = [60, 110, 110, 110, 60, 80]; // Ajustar el ancho de la columna "Fecha" a 80
+   const columnWidths = [40, 110, 130, 110, 50, 80]; // Reducir el ancho de "ID Ingreso" a 40
    
    // Calcular el ancho total de la tabla
    const tableWidth = columnWidths.reduce((a, b) => a + b, 0);
@@ -237,7 +259,7 @@ router.post('/downloadpdf', async (req, res) => {
    
      // Añadir texto a la celda de la cabecera
      doc.fillColor('white')
-       .text(header, xPosition + 5, rowTop + 5, { width: columnWidths[i] - 10, align: 'center' });
+       .text(header, xPosition + 5, rowTop + 12, { width: columnWidths[i] - 10, align: 'center' });
    });
    
    rowTop += rowHeight;
@@ -269,7 +291,7 @@ router.post('/downloadpdf', async (req, res) => {
    
      // Añadir texto a la celda de datos
      doc.fillColor('gray')
-       .text(value || '', xPosition + 5, rowTop + (rowHeight / 2), { width: columnWidths[i] - 10, align: 'center', valign: 'center' });
+       .text(value || '', xPosition + 5, rowTop + (rowHeight / 2) - 8, { width: columnWidths[i] - 10, align: 'center', valign: 'center' });
    });
    
    rowTop += rowHeight;
